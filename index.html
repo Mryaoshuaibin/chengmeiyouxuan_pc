@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商家入驻</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/layui-v2.5.4/layui/css/layui.css" >
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="/layui-v2.5.4/layui/layui.js"></script>
+</head>
+<body>
+    <header>
+        <img src="img/logo.gif" alt="">
+        <nav>
+            <span><a href="index_sy .html">首页</a></span>
+            <span>商家入驻</span>
+            <span><a href="help.html">帮助中心</a></span>
+            <span>商务合作</span>
+        </nav>
+        <span id="backstage">商家后台管理</span>
+    </header>
+    <div id="ruzhu">
+        <footer>
+            <div id="footer_left">
+                <div>平台商城  诚邀入驻</div>
+                <div>创业新平台，让你早上致富之路</div>
+                <div>— 诚美优选 —</div>
+            </div>
+            <div id="footer_right">
+                <span>商家入驻</span>
+                <div id="footer_right_bottom">
+                    <input type="text"  placeholder="请输入手机号" id="inputs1" class="footer_input inputs">
+                    <div id="footer_tishi">该手机号将默认为入驻人店铺账户名  请谨慎填写</div>
+                    <span class="footer_input">
+                        <input type="text" id="inputs2" placeholder="请输入图片验证码">
+                        <img id="footer_img" src="" alt="">
+                    </span>
+                    <span class="footer_input footer_input1">
+                        <input type="text" id="inputs3" placeholder="请输入短信验证码"> 
+                        <div id="getCode" class="gray-bg1">
+                            发送验证码
+                        </div>
+
+                    </span>
+                    <button class="footer_button1">登录</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="dibu_footer">
+        <span class="footer_p">
+            <img src="img/dibu.gif" alt="">
+            <p>诚美优选</p>
+        </span>
+        <span class="footer_span">
+            <span>商家入驻</span>&nbsp;|&nbsp;<span>帮助中心</span>&nbsp;|&nbsp;<span>商务合作</span>
+        </span>
+        <span class="footer_p">
+            <img src="img/dibu.gif" alt="">
+            <p>扫码下载</p>
+        </span>
+        <div class="footer_div">豫ICP备18039469号</div>
+    </div>
+
+    <div id="overlay">
+        <div id="overlay_1">
+            <div>
+                <span id="overlay_biaoti">提示</span>
+                <img src="img/qvxiao.gif" alt="" style=" cursor:pointer;" onClick="hideOverlay('overlay');">
+            </div>
+            <div id="overlay_neirong">
+                该手机号已入驻，请登录商家管理平台进行操作                 
+            </div>
+            <div id="overlay_bottom">
+                <div>前往商家后台</div>
+                <div onClick="hideOverlay('overlay');">取消</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+// 显示遮罩层
+// function showOverlay(divId){
+//             document.getElementById(divId).style.display = 'block';
+//         }
+//取消遮罩层 
+    function hideOverlay(divId){
+            document.getElementById(divId).style.display = 'none';
+    }
+</script>
+<script>
+    $(function(){
+        function security(){
+            $.ajax({
+                url:"https://api.chengmeiyoupin.com/rear/index/verifyCode",
+                success:function(data){
+                    console.log(data)
+                    $("#footer_img").attr("src",data.data.img)
+                    localStorage.setItem('verification', JSON.stringify(data));
+                }
+            })
+        }
+        security()
+        $("#footer_img").click(function(){
+            security()
+        })
+        $("#inputs1").focus(function(){
+            $("#footer_tishi").css("display","block")
+        })
+        $("#inputs1").blur(function(){
+            $("#footer_tishi").css("display","none")
+        }) 
+        var timer="";
+        var nums=60;
+        var validCode=true;//定义该变量是为了处理后面的重复点击事件
+        $("#getCode").on('click',function(){
+            // console.log("111");
+            var code=$(this);
+            $.ajax({
+                url:"https://api.chengmeiyoupin.com/rear/index/send",
+                type:"get",
+                // header:{"Access-Control-Allow-Origin"},
+                data:{
+                    phone:$("#inputs1").val(),
+                    type:8
+                },
+                success:function(mag){
+                    console.log(mag)
+                    if(mag.code==200){
+                        if(validCode){
+                            validCode=false;
+                            code.text("已发送验证码(60)");
+                            code.addClass("gray-bg");
+                            timer=setInterval(function(){
+                                code.addClass("gray-bg");
+                                if(nums>0){
+                                    nums--;
+                                    code.text("已发送验证码("+nums+")");  
+                                }
+                                else{
+                                    clearInterval(timer);
+                                    nums=60;//重置回去
+                                    validCode=true;
+                                    code.removeClass("gray-bg");
+                                    code.text("发送验证码");
+                        }
+                            },1000)
+                        }
+                    }else{
+                        alert("发送失败")
+                    }
+                },
+                error:function(err){
+                    console.log(err)
+                }
+            });
+        })
+        $('input').on('input propertychange', function() {
+            if(($.trim($('#inputs1').val()) !== "") && ($.trim($('#inputs2').val()) !== "")&& ($.trim($('#inputs3').val()) !== "")){
+                $("button").addClass("footer_button");
+            } else {
+                $("button").removeClass("footer_button");
+            }
+        });
+        // 手机号验证
+        $("#inputs1").blur(function(){
+            var cardval = $(this).val();
+            var reg = /(1[3-9]\d{9}$)/;
+            if(reg.test(cardval) === false && cardval !==""){
+                alert ("手机号格式不合法")
+                return false
+            }
+        })
+        $(document).on('click','.footer_button',function (){
+            var data1 = JSON.parse(localStorage.getItem('verification'));
+            console.log(data1)
+            $.ajax({
+                url:"https://api.chengmeiyoupin.com/rear/index/register",
+                type:"post",
+                data:{
+                    code:$("#inputs2").val(),
+                    verify:data1.data.verify,
+                    phone:$("#inputs1").val(),
+                    sms:$("#inputs3").val()
+                },
+                success:function(msg){
+                    console.log(msg)
+                    // document.cookie= aa+"="+cookieValue;
+                    if(msg.code == 200){
+                        window.location.href="index_ruzhu.html";
+                        localStorage.setItem(msg.data.key, msg.data.token);
+                        console.log("请求成功")
+                    }else if(msg.codo == 202){
+                        $("#overlay").css("display","block")
+                    }else {
+                        // alert("验证码输入错误")
+                    }
+                }
+            })
+        });
+        $("#backstage").click(function(){
+            window.location.href="register.html";
+        })
+        
+    })   
+</script>
+</html>

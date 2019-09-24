@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>企业入驻2</title>
+    <link rel="stylesheet" href="css/ruzhu2.css">
+    <link rel="stylesheet" href="layui-v2.5.4/layui/css/layui.css" media="all">
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="layui-v2.5.4/layui/layui.js"></script>
+</head>
+<body>
+    <header>
+        <span id="header_left">
+            <img src="img/logo.gif" alt="" id="logo">
+        </span>
+        <span id="header_right"> 
+            <span id="uesr">15517511236</span>
+            <span>|</span>
+            <span id="tuichu">退出</span>
+        </span>
+    </header>
+    <div id="from_neirong">
+        <div id="from_top">
+            <span id="from_top_left">企业旗舰店入驻</span>
+            <span id="from_top_right">(*请务必完善相关资料)</span>
+        </div>
+        <div id="jindu">
+            <span class="jindu_1">1</span>
+            <span class="xinxi_1">身份信息</span>
+            <span class="fenge fenge_1"></span>
+            <span class="jindu_1">2</span>
+            <span class="xinxi_1">店铺材料资质</span>
+            <span class="fenge"></span>
+            <span class="jindu_1 jindu_2">3</span>
+            <span class="xinxi_1 xinxi_2">提交成功</span>
+        </div>
+        <div id="from">营业执照证件信息</div>
+        <div id="from_2_top">
+            <span class="from_name_fu">*</span>
+            <span class="from_name from_2_top">&nbsp;是否是国内企业证件照</span>
+            <span><img style="width: 31px; height:31px; margin-left: 21px;" src="img/单选框 选中.png" alt=""></span>
+            <span  class="from_name" style="margin-left:20px;">是</span>
+        </div>
+        <div id="from_3_1">
+            <span class="from_name_fu">*</span>
+            <span class="from_name">是否三证合一</span>
+            <span id="from_3_input">
+                <label><img class="btn_img" id="img" src="img/单选框 选中.png" alt=""> <input type="radio" id="aaa" name="sex" value="0" checked><span>是</span> </label>
+                <label><img class="btn_img" id="img1" src="img/单选框.png" alt=""><input type="radio" id="aaa" name="sex" value="1"><span>否</span></label>
+            </span> 
+        </div>
+        <div id="from_3_2-1" class="from_3_2">
+            <span class="from_name_fu">*</span>
+            <span class="from_name" >营业执照注册号</span>
+            <input type="text" class="from_3_input" id="inputs1" placeholder="请输入营业执照注册号">
+        </div>
+        <div id="from_3_2-2" class="from_3_2">
+            <span class="from_name_fu">*</span>
+            <span class="from_name" >组织机构代码</span>
+            <input type="text" class="from_3_input" id="inputs2" placeholder="请输入组织机构代码">
+        </div>
+        <div id="from_3_2-3" class="from_3_2">
+            <span class="from_name_fu">*</span>
+            <span class="from_name" >纳税人识别码</span>
+            <input type="text" class="from_3_input" id="inputs3" placeholder="请输入纳税人识别码">
+        </div>
+        <div id="from_3_2">
+            <span class="from_name_fu">*</span>
+            <span class="from_name" >统一社会信用代码</span>
+            <input type="text" class="from_3_input" id="inputs4" placeholder="请输入统一社会信用代码">
+        </div>
+        <div id="from_3_3" style="height: 38px">
+            <span class="from_name_fu" style="float: left">*</span>
+            <span class="from_name" style="float: left">&nbsp;营业期限</span>
+            <span style="float: left; margin-left: 20px;">
+                <form class="layui-form" action="">
+                    <div class="layui-form-item" style="float: left">
+                        <div class="layui-input-inline">
+                            <select name="quiz1" id="quiz1">
+                            <option value="">年</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <select name="quiz2" id="quiz2"  lay-filter="type_mid">
+                            <option value="">月</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <select name="quiz3" id="quiz3" lay-filter="type_mid1">
+                            <option value="">日</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </span>
+            <span style="float: left">
+                    <form class="layui-form" action="">
+                    <div class="layui-form-item" pane="" style="float: left">
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="like1[read]" lay-skin="primary" title="长期" id="quiz4" value="0">
+                        </div>
+                    </div>
+                    </form>
+            </span>
+        </div>
+        <div id="from_4">
+            <div class="from_name_fu">*</div>
+            <div class="from_name" >&nbsp;营业执照</div>
+            <div id="shangchuan" style="position: relative; ">
+                <img src="img/加号.png" alt="">
+                <div  class="layui-btn" id="test1" >点击上传</div>
+                <div class="layui-upload" id="layui-upload" style="display:none; position: absolute;top: 0px;" >
+                        <div class="layui-upload-list">
+                                <img class="layui-upload-img" id="demo1" style="height: 158px;
+                                width: 158px;
+                                border:1px dashed rgba(153,153,153,1);
+                                border-radius:8px;
+                                margin-top:-10px;
+                                z-index: 1;
+                                ">
+                        </div>
+                </div>
+            </div>
+            <div onClick="showOverlay('overlay');" id="fanli">查看范例</div>
+        </div>
+        <div id="from_5">
+            <div class="from_name_fu">*</div>
+            <div class="from_name" >&nbsp;开户许可证</div>
+            <div id="shangchuan1" style="position: relative; ">
+                    <img src="img/加号.png" alt="">
+                    <div  class="layui-btn" id="test2" >点击上传</div>
+                    <div class="layui-upload" id="layui-upload1" style="display:none; position: absolute;top: 0px;" >
+                            <div class="layui-upload-list">
+                                    <img class="layui-upload-img" id="demo2" style="height: 158px;
+                                    width: 158px;
+                                    border:1px dashed rgba(153,153,153,1);
+                                    border-radius:8px;
+                                    margin-top:-10px;
+                                    z-index: 1;
+                                    ">
+                            </div>
+                    </div>
+                </div>
+            <div>
+                <p>若所在地未取消开发许可证核发，请上传开户许可证</p>
+                <p class="from_5_dj">查看《开户许可证》范例</p>
+                <p>若所在地取消开户许可证核发，请上传开户银行盖章的基本存款账户凭证</p>
+                <p class="from_5_dj">范例一： 《开立银行结算账户清单和申请书》</p>
+                <p class="from_5_dj">范例二： 《基本存款账户凭证》范例</p>
+            </div>
+        </div>
+        <div id="from_6">
+            <span id="from_6_left">商标信息上传</span>
+            <span id="from_6_right">(注：上传的图片大小在5M以内，仅支持JPG、PNG格式)</span>
+        </div>
+        <div id="from_7_1">
+            <span class="from_name_fu">*</span>
+            <span class="from_name">商标类型</span>
+            <span id="from_3_input">
+                <!-- <label><input type="radio" name="sex" value="是"><span>自由商标</span> </label>
+                <label><input type="radio" name="sex" value="否"><span>授权商标</span></label> -->
+                <label><img class="btn_img" id="img2" src="img/单选框 选中.png" alt=""> <input type="radio" id="aaa" name="sex1" value="0" checked><span>自由商标</span> </label>
+                <label><img class="btn_img" id="img3" src="img/单选框.png" alt=""><input type="radio" id="aaa" name="sex1" value="1"><span>授权商标</span></label>
+            </span> 
+        </div>
+        <div id="from_7">
+            <span class="from_name_fu">*</span>
+            <span class="from_name" >商标注册号</span>
+            <input type="text" class="from_3_input" id="inputs5" placeholder="商标注册号">
+            <span class="from_7_dj">商标注册号处填写右图上标红框内的数字及字母即可</span>
+            <div id="from_7_bottom">
+                <span><img src="img/shangbiao.gif" alt=""></span>
+                <span><img src="img/shangbiao1.gif" alt=""></span>
+            </div>
+        </div>
+        <div class="from_7">
+            <div class="from_name_fu">*</div>
+            <div class="from_name" >
+                <span>&nbsp;商标注册证明</span>
+                <p>(最多5张)</p>
+            </div>
+            <div id="from_7_sc" style="margin-top: -10px;">
+                <div class="layui-upload-list"  id="demo11"><img id="from_7_img" style="display: block;" src="img/shangbiao3.gif" alt=""></div>
+            </div>
+            <div id="shangchuan3">
+                    <img src="img/加号.png" alt="">
+                    <div  class="layui-btn" id="test11">点击上传<p>(<span id="test111">0</span>/5)</p></div>
+            </div>
+            <!-- <div class="layui-upload">
+                <button type="button" class="layui-btn" id="test11">多图片上传</button> 
+            </div> -->
+        </div>
+        <div class="from_7_1">
+            <p>商标注册证明处上传注册证或受理通知书，如果是复印件、扫描件需要加盖公司鲜章
+            <br/>(注意：该处上传的商标注册证或受理通知书一定要和填写的商标注册号一致，否则将被驳回)
+            </p>
+        </div>
+        <div class="from_7">
+            <div class="from_name_fu">*</div>
+            <div class="from_name" >
+                <span>&nbsp;品牌授权证明</span>
+                <p>(最多5张)</p>
+            </div>
+            <div id="from_7_sc" style="margin-top: -10px;">
+                <div class="layui-upload-list"  id="demo22"><img id="from_7_img1" style="display: block;" src="img/shangbiao3.gif" alt=""></div>
+            </div>
+            <div id="shangchuan3">
+                    <img src="img/加号.png" alt="">
+                    <div  class="layui-btn" id="test22">点击上传<p>(<span id="test222">0</span>/5)</p></div>
+            </div>
+        </div>
+        <div class="from_7_1">
+            <p>需上传商标权利人到开店公司的完整销售授权链（不超过三级）的授权书。完整的授权链路指从
+                <br/>商标权利人到开店公司的整个授权链，以三级授权链路为例：商标权利人A授权B销售其品牌商品，
+                <br/>为此一级授权，B授权C销售该品牌商品，为此二级授权，C授权开店公司D销售该品牌商品，此为
+                <br/>三级授权，则开店公司D需完整提交A至B至C至D的各级授权书。
+            </p>
+        </div>
+        <div id="from_8">
+            <span class="from_name_fu">*</span>
+            <span class="from_name" >品牌授权截止</span>
+            <!-- <input type="text" class="from_3_input" placeholder="截止时间"> -->
+            <div class="layui-input-inline from_3_input">
+                <input type="text" class="layui-input" id="test13" placeholder="yyyyMMdd">
+                <img src="img/日期.png" alt="">
+            </div>
+        </div>
+        <div id="tijiao">
+            <a href="javascript:history.back(-1)" id="tijiao_1">上一步</a>
+            <span id="tijiao1" class="tijiao_2">提交申请</span>
+        </div>
+        <div id="overlay" onClick="hideOverlay('overlay');">
+            <img src="img/fanli.gif" alt="">
+        </div>
+    </div>
+    <footer>
+        <span class="footer_p">
+            <img src="img/dibu.gif" alt="">
+            <p>诚美优选</p>
+        </span>
+        <span class="footer_span">
+            <span>商家入驻</span>&nbsp;|&nbsp;<span>帮助中心</span>&nbsp;|&nbsp;<span>商务合作</span>
+        </span>
+        <span class="footer_p footer_p1">
+            <img src="img/dibu.gif" alt="">
+            <p>扫码下载</p>
+        </span>
+        <div class="footer_div">豫ICP备18039469号</div>
+    </footer>
+</body>
+<script type="text/javascript">
+// 显示遮罩层
+function showOverlay(divId){
+            document.getElementById(divId).style.display = 'block';
+        }
+//取消遮罩层 
+    function hideOverlay(divId){
+            document.getElementById(divId).style.display = 'none';
+    }
+$(function(){
+    $(document).on('click','#tijiao_3',function (){
+        window.location.href="index_ruzhu3.html";
+    });
+})
+</script>
+<script>
+    // debugger;
+    //alert($("#quiz2 option:selected").val())
+    
+    $(function(){
+        
+        $("input[type='radio'][name='sex']:eq(0)").click(function(){
+        })
+        $("input[type='radio'][name='sex']:eq(0)").click(function(){
+            // $("#from_3_2").css("display","block");
+            $(".from_3_2").css("display","none")
+            $("#img").attr("src","img/单选框 选中.png");
+            $("#img1").attr("src","img/单选框.png");
+            $('input').on('input propertychange', function() {
+                if(($.trim($('#inputs4').val()) !== "") 
+                    && ($.trim($('#inputs5').val()) !== "") 
+                    // && ($.trim($('#quiz1').val())!=="") 
+                    // && ($.trim($('#quiz2').val())!=="") 
+                    // && ($.trim($('#quiz3').val())!=="")
+                ){
+                    $("#tijiao1").addClass("tijiao_3");
+                } else {
+                    $("#tijiao1").removeClass("tijiao_3");
+                }
+            });
+        })
+        $("input[type='radio'][name='sex']:eq(1)").click(function(){
+            // $("#from_3_2").css("display","none");
+            $(".from_3_2").css("display","block")
+            $("#img1").attr("src","img/单选框 选中.png");
+            $("#img").attr("src","img/单选框.png");
+            $("#tijiao1").removeClass("tijiao_3");
+            $('input').on('input propertychange', function() {
+                if(($.trim($('#inputs1').val()) !== "") 
+                    && ($.trim($('#inputs2').val()) !== "")
+                    && ($.trim($('#inputs3').val()) !== "")
+                    && ($.trim($('#inputs4').val()) !== "")
+                    && ($.trim($('#inputs5').val()) !== "")
+                    && ($.trim($('#test13').val()) !== "")
+                ){
+                    $("#tijiao1").addClass("tijiao_3");
+                } else {
+                    $("#tijiao1").removeClass("tijiao_3");
+                }
+            });
+        })
+        $("input[type='radio'][name='sex1']:eq(0)").click()
+        $("input[type='radio'][name='sex1']:eq(0)").click(function(){
+            $("#img2").attr("src","img/单选框 选中.png");
+            $("#img3").attr("src","img/单选框.png");
+        })
+        $("input[type='radio'][name='sex1']:eq(1)").click(function(){
+            $("#img3").attr("src","img/单选框 选中.png");
+            $("#img2").attr("src","img/单选框.png");
+        })
+        
+        $('input').on('input propertychange', function() {
+            if(($.trim($('#inputs4').val()) !== "") 
+                && ($.trim($('#inputs5').val()) !== "") 
+                // && ($.trim($('#quiz1').val())!=="") 
+                // && ($.trim($('#quiz2').val())!=="") 
+                // && ($.trim($('#quiz3').val())!=="")
+            ){
+                $("#tijiao1").addClass("tijiao_3");
+            } else {
+                $("#tijiao1").removeClass("tijiao_3");
+            }
+        });
+        
+        
+        // console.log(data2.id_card)
+        // 提交按钮切换样式后点击执行的事件
+        $(document).on('click','.tijiao_3',function (){
+            var data2 = JSON.parse(localStorage.getItem('key'));
+            var quiz1= $("#quiz1").val()
+            var quiz2= $("#quiz2").val()
+            var quiz3= $("#quiz3").val()
+            var quiz = quiz1+quiz2+quiz3
+            var token =  localStorage.getItem('enter')
+            $.ajax({
+                url:"https://api.chengmeiyoupin.com/rear/index/enter",
+                type:"post",
+                headers:{
+                    "enter":token 
+                },
+                data: {
+                    category:"3",
+                    category_business:"3",
+                    store_name: data2.store_name,
+                    password: data2.password,
+                    re_password: data2.re_password,
+                    id_card: data2.id_card,
+                    true_name: data2.true_name,
+                    id_card_positive: data2.id_card_positive,
+                    id_card_negative: data2.id_card_negative,
+                    phone: data2.phone,
+                    isdomestic:"0",
+                    gather:$('input[name="sex"]:checked ').val(),
+                    license:"aa",
+                    opening_permit:"aa",
+                    organization_code:$("#inputs2").val(),
+                    validity_period: $("#quiz4").val() && quiz,
+                    certificate:$("#inputs1").val(),
+                    taxpayer_code:$("#inputs3").val(),
+                    tax_registration_certificate:$("#inputs4").val(),
+                    trademark_type:$('input[name="sex1"]:checked ').val(),
+                    trademark_register_code:$("#inputs5").val(),
+                    trademark_register_prove:"aa",
+                    brand_auth_prove:"aa",
+                    brand_auth_validity_period:$("#test13").val()
+                },
+                success:function(data){
+                    console.log(data)
+                    // localStorage.removeItem('key');
+                    if(data.code == 200){
+                        window.location.href="ruzhu3.html";
+                    }else{
+                        alert(data.msg)
+                    }
+                }
+            })
+        });
+        
+    }) 
+    layui.use('upload', function(){
+  var $ = layui.jquery
+  ,upload = layui.upload;
+  
+  //普通图片上传
+  var uploadInst = upload.render({
+    elem: '#test1'
+    ,url: '/upload/'
+    ,size:5120
+    ,acceptMime:  'image/jpg, image/png'
+    ,before: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+        $('#demo1').attr('src', result); //图片链接（base64）
+        $("#layui-upload").css("display","block")
+      });
+    }
+    ,done: function(res){
+      //如果上传失败
+      if(res.code > 0){
+        return layer.msg('上传失败');
+      }else{
+        //   $(".layui-upload").css("display","block")
+      }
+      //上传成功
+    }
+    ,error: function(){
+      //演示失败状态，并实现重传
+      var demoText = $('#demoText');
+      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+      demoText.find('.demo-reload').on('click', function(){
+        uploadInst.upload();
+      });
+    }
+  });
+  var uploadInst = upload.render({
+    elem: '#test2'
+    ,url: '/upload/'
+    ,size:5120
+    ,acceptMime:  'image/jpg, image/png'
+    ,before: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+        $('#demo2').attr('src', result); //图片链接（base64）
+        $("#layui-upload1").css("display","block")
+      });
+    }
+    ,done: function(res){
+      //如果上传失败
+      if(res.code > 0){
+        return layer.msg('上传失败');
+      }else{
+        //   $(".layui-upload").css("display","block")
+      }
+      //上传成功
+    }
+    ,error: function(){
+      //演示失败状态，并实现重传
+      var demoText = $('#demoText');
+      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+      demoText.find('.demo-reload').on('click', function(){
+        uploadInst.upload();
+      });
+    }
+  });
+
+
+  var fileCount = 0;
+  var fileCount1 = 0;
+  upload.render({
+    elem: '#test11'
+    ,url: '/upload/'
+    ,multiple: true
+    ,number:5
+    ,size:5120
+    ,acceptMime:  'image/jpg, image/png'
+    ,before: function(obj){
+        
+        // console.log(this.number)
+        var _number = this.number
+        if(fileCount>_number-1){
+            return alert("只能上传五张")
+        }
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+          fileCount++;
+        $("#from_7_img").css("display","none")
+        $('#demo11').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img">')
+        $("#test111").text(fileCount);
+    }); 
+          
+    }
+    // ,choose:function(obj){
+    //     // var fileCount = obj.upload.length;
+    //     // this.data.fileCount = fileCount;
+    //     console.log(obj);
+    //     var a = $(".layui-upload-img").lenght
+    //     console.log(obj.successful)
+    // }
+    ,done: function(res){
+      //上传完毕
+    }
+  });
+
+  upload.render({
+    elem: '#test22'
+    ,url: '/upload/'
+    ,multiple: true
+    ,number:5
+    ,size:5120
+    ,acceptMime:  'image/jpg, image/png'
+    ,before: function(obj){
+        
+        // console.log(this.number)
+        var _number = this.number
+        if(fileCount1>_number-1){
+            return alert("只能上传五张")
+        }
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+          fileCount1++;
+        $("#from_7_img1").css("display","none")
+        $('#demo22').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img">')
+        $("#test222").text(fileCount1);
+    }); 
+          
+    }
+    // ,choose:function(obj){
+    //     // var fileCount = obj.upload.length;
+    //     // this.data.fileCount = fileCount;
+    //     console.log(obj);
+    //     var a = $(".layui-upload-img").lenght
+    //     console.log(obj.successful)
+    // }
+    ,done: function(res){
+      //上传完毕
+    }
+  });
+})
+layui.use("laydate",function(){
+    var laydate = layui.laydate
+
+    laydate.render({
+    elem: '#test13'
+    ,format: 'yyyyMMdd'
+  });
+})
+
+layui.use(['form','layedit','laydate'],function(){
+    var form = layui.form
+    ,layer = layui.layer
+    ,layedit = layui.layedit
+    ,laydate = layui.laydate
+    ,$= layui.$;
+
+
+    form.on('select(type_mid)', function(data){
+    //   console.log(data.elem); //得到select原始DOM对象
+    //   console.log(data.value); //得到被选中的值]
+    //   $("#quiz2").val(data.value)
+    //   console.log(data.othis); //得到美化后的DOM对象
+    $html = ""
+    if(data.value == 2){
+        // $("#quiz3").remove()
+        $("#quiz3").empty();
+            for(var i=1;  i<=28;i++){
+                $html+="<option value="+i+">"+i+"</option>"
+                
+            }
+            console.log($html)
+        }
+        else if(data.value  == 4 ||data.value  == 6 ||data.value  == 9 ||data.value  == 11 ){
+            $("#quiz3").empty();
+            for(var i=1;  i<=30;i++){
+                $html+="<option value="+i+">"+i+"</option>"
+                
+            }
+            console.log($html)
+        }
+        else{
+            $("#quiz3").empty();
+            for(var i=1;  i<=31;i++){
+                $html+="<option value="+i+">"+i+"</option>"
+                
+            }
+            console.log($html)
+        }
+        $("#quiz3").append($html)
+        form.render('select');
+    }); 
+})
+
+</script>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>入驻申请</title>
+    <link rel="stylesheet" href="css/index_ruzhu.css">
+    <script src="js/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <header>
+        <span id="header_left">
+            <img src="img/logo.gif" alt="" id="logo">
+        </span>
+        <span id="header_right"> 
+            <span id="uesr">15517511236</span>
+            <span>|</span>
+            <span id="tuichu">退出</span>
+        </span>
+        <span id="header_right1">商家后台管理</span>
+    </header>
+    <div id="zhong">
+        <div id="zhong_nr">
+            <div>
+                <span>入驻申请</span>
+                <span>合作共赢</span>
+            </div>
+            <div>
+                <span>官方认证</span>
+                <span>店铺绑定</span>
+                <span>资源共享</span>
+            </div>
+            <div id="zhong_nr_1">
+                <span>
+                    <div class="zhong_bt">个人开店</div>
+                    <div class="tsnr">需提供身份证等信息</div>
+                    <a href="personal.html"><div class="zhong_kaidian">立即开店</div></a>
+                </span>
+                <span>
+                    <div class="zhong_bt">个人工商开店</div>
+                    <div class="tsnr">需提供身份证与营业执照等信息</div>
+                    <a href="personal1.html"><div class="zhong_kaidian">立即开店</div></a>
+                </span>
+                <span>
+                    <div  class="zhong_bt">企业开店</div>
+                    <div>
+                        <div class="qijian">
+                            <label><input type="radio" name="sex" value="3" checked><span>旗舰店：经营1个自有品牌或者1级授权品牌旗舰店</span></label>
+                        </div>
+                        <div class="qijian zhuanmai">
+                            <label><input type="radio" name="sex" value="2"><span>专卖店：经营一个自有品牌或者授权销售专卖店(不超过2级)</span></label>
+                        </div>
+                        <div class="qijian zhuanying">
+                            <label><input type="radio" name="sex" value="1"><span>专营店：经营1个或多个自有/他人品牌的专营店</span></label>
+                        </div>
+                        <div class="qijian putong">
+                            <label><input type="radio" name="sex" value="0"><span>普通店：普通企业开店</span></label>
+                        </div>
+                    </div>
+                    <div class="zhong_kaidian" id="zhong_qykd" onclick="kaidian()">立即开店</div>
+                </span>
+                <img src="img/pic_mascot .png" alt="" style="position:fixed; top:199px; right:95px;">
+                <img src="img/吉祥物爪子.png" alt="" style="position: fixed; top:295px; right: 95px; z-index: 1;" >
+                <div id="right_fd">
+                    <div>
+                        <ul>
+                            <li>
+                                <div>
+                                    商家入驻需要哪些
+                                    条件？
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    商家入驻需要哪些
+                                    条件？
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    商家入驻需要哪些
+                                    条件？
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    商家入驻需要哪些
+                                    条件？
+                                </div>
+                            </li>
+                            <div id="right_ckgd">
+                                查看更多
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span class="footer_p">
+            <img src="img/dibu.gif" alt="">
+            <p>诚美优选</p>
+        </span>
+        <span class="footer_span">
+            <span>商家入驻</span>&nbsp;|&nbsp;<span>帮助中心</span>&nbsp;|&nbsp;<span>商务合作</span>
+        </span>
+        <span class="footer_p footer_p1">
+            <img src="img/dibu.gif" alt="">
+            <p>扫码下载</p>
+        </span>
+        <div class="footer_div">豫ICP备18039469号</div>
+    </footer>
+</body>
+<script>
+$(function(){
+    $("#header_right1").click(function(){
+        window.location.href="register.html";
+    })
+    $("#right_ckgd").click(function(){
+        window.location.href="help.html";
+    })
+    $("#zhong_qykd").click(function(){
+        var category_business = $('input[name="sex"]:checked ').val()
+        window.location.href="ruzhu1.html";
+    })
+})
+</script>
+</html>

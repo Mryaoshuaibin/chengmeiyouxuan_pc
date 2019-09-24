@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台登录</title>
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <header>
+        <img src="img/logo.gif" alt="" id="header_img">
+    </header>
+    <div id="ruzhu">
+        <footer>
+            <div id="footer_left">
+                <div>平台商城  诚邀入驻</div>
+                <div>创业新平台，让你早上致富之路</div>
+                <div>— 诚美优选 —</div>
+            </div>
+            <div id="footer_right">
+                <span>商家入驻</span>
+                <div id="footer_right_bottom">
+                    <input type="text" id="inputs1"  placeholder="账户名/手机号" class="footer_input inputs">
+                    <input type="password" id="inputs2" class="footer_input" placeholder="密码">
+                    <span class="footer_input">
+                        <input type="text" id="inputs3" class="inputs" placeholder="请输入验证码">
+                        <img src="" alt="" id="footer_img">
+                    </span>
+                    <a href="password.html">忘记密码？</a>
+                    <button class="footer_button1">登录</button>
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+    <div id="dibu_footer">
+        <span class="footer_p">
+            <img src="img/dibu.gif" alt="">
+            <p>诚美优选</p>
+        </span>
+        <span class="footer_span">
+            <span>商家入驻</span>&nbsp;|&nbsp;<span>帮助中心</span>&nbsp;|&nbsp;<span>商务合作</span>
+        </span>
+        <span class="footer_p">
+            <img src="img/dibu.gif" alt="">
+            <p>扫码下载</p>
+        </span>
+        <div class="footer_div">豫ICP备18039469号</div>
+    </div>
+
+    <div id="overlay">
+        <div id="overlay_1">
+            <div>
+                <span id="overlay_biaoti">提示</span>
+                <img src="img/qvxiao.gif" alt="" style=" cursor:pointer;" onClick="hideOverlay('overlay');">
+            </div>
+            <div id="overlay_neirong">
+                此账号已退店，不能登录；如需登录，请重新入驻              
+            </div>
+            <div id="overlay_bottom">
+                <div onClick="hideOverlay('overlay');">确定</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+// 显示遮罩层
+function showOverlay(divId){
+            document.getElementById(divId).style.display = 'block';
+        }
+//取消遮罩层 
+    function hideOverlay(divId){
+            document.getElementById(divId).style.display = 'none';
+    }
+</script>
+<script>
+    $(function(){
+        $('input').on('input propertychange', function() {
+            if(($.trim($('#inputs1').val()) !== "") && ($.trim($('#inputs2').val()) !== "")&& ($.trim($('#inputs3').val()) !== "")){
+                $("button").addClass("footer_button");
+            } else {
+                $("button").removeClass("footer_button");
+            }
+        });
+        function security(){
+            $.ajax({
+                url:"https://api.chengmeiyoupin.com/rear/index/verifyCode",
+                success:function(data){
+                    console.log(data)
+                    $("#footer_img").attr("src",data.data.img)
+                    localStorage.setItem('verification_1', JSON.stringify(data));
+                }
+            })
+        }
+        security()
+        $("#footer_img").click(function(){
+            security()
+        })
+        $(document).on('click','.footer_button',function (){
+            var data1 = JSON.parse(localStorage.getItem('verification_1'));
+            console.log(data1)
+            $.ajax({
+                url:"https://api.chengmeiyoupin.com/rear/index/login",
+                type:"get",
+                data:{
+                    code:$("#inputs3").val(),
+                    verify:data1.data.verify,
+                    phone:$("#inputs1").val(),
+                    password:$("#inputs2").val()
+                },
+                success:function(data){
+                    console.log(data)
+                    if(data.code==200){
+
+                    }else if(data.code==508){
+                        alert("账号为注册")
+                    }else if(data.code==521){
+                        alert("审核未通过")
+                    }else(
+                        alert(data.msg)
+                    )
+                }
+
+            })
+            // window.location.href="index_ruzhu.html";
+        });
+        $("#header_img").click(function(){
+            window.location.href="index_sy.html";
+        })
+
+    })   
+</script>
+</html>

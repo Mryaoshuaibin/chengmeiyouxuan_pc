@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>帮助中心</title>
+    <link rel="stylesheet" href="css/help.css">
+    <link rel="stylesheet" href="layui-v2.5.4/layui/css/layui.css">
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="layui-v2.5.4/layui/layui.js"></script>
+   
+</head>
+<body>
+    <header>
+        <img src="img/logo.gif" alt="">
+        <nav>
+            <span><a href="index_sy.html">首页</a></span>
+            <span><a href="index.html">商家入驻</a></span>
+            <span>帮助中心</span>
+            <span>商务合作</span>
+        </nav>
+        <span id="backstage">商家后台管理</span>
+    </header>
+    <div id="middle">
+        <div id="middle_top">
+            <div>
+                <div class="middle_top_bz">帮助中心</div>
+                <div class="middle_top_zs">—专属服务解答中心—</div>
+            </div>
+            <div id="middle_input">
+                <img src="img/搜索.png" alt="">
+                <input type="text" placeholder="请输入您想要的搜索内容">
+            </div>
+            <div id="button">搜索</div>
+        </div>
+    </div>
+    <div id="middle_bottom">
+        <div id="middle_bottom_left">
+            <ul class="middle_bottom_ul">
+                <li class="middle_bottom_ul-li">
+                        <div class="middle_li">商家入驻相关</div>
+                        <img class="middle_img" src="img/icon_pulldown.png" alt="">
+                        <ul class="middle_div_ul">
+                            <li>常见问题</li>
+                            <li>提交资质问题</li>
+                            <li>店铺保证金及体现问题</li>
+                        </ul>
+                    
+                </li>
+                <li class="middle_bottom_ul-li">
+                        <div class="middle_li">商家入驻相关</div> 
+                        <img class="middle_img" src="img/icon_pulldown.png" alt="">
+                        <ul class="middle_div_ul">
+                            <li>常见问题</li>
+                            <li>提交资质问题</li>
+                            <li>店铺保证金及体现问题</li>
+                        </ul>
+                </li>
+                <li class="middle_bottom_ul-li">
+                        <div class="middle_li">商家入驻相关</div> 
+                        <img class="middle_img" src="img/icon_pulldown.png" alt="">
+                        <ul class="middle_div_ul">
+                            <li>常见问题</li>
+                            <li>提交资质问题</li>
+                            <li>店铺保证金及体现问题</li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="middle_bottom_right">
+            <ul id="middle_bottom_right_ul">
+                <li class="middle_right">
+                    <div class="middle_right_1-1"></div>
+                    <div class="middle_right_2">商家入驻条件?</div>
+                    <img class="middle_right_3" src="img/icon_right_pulldown.png" alt="">
+                    <div class="middle_right_4">
+                            进入诚美优选官网，点击【商家入驻】 -- 【选择店铺类型】自主入驻，具体流程为：一、选择店铺类型；二、填写并提交相
+                            关资质、店铺名(入驻成功后店铺名不能修改)、店铺详情等信息；三、等待诚美优选平台审核；四、平台审核通过后缴纳店铺
+                            保证金；五、上架商品。 
+                    </div>
+                </li>
+                <li class="middle_right">
+                    <div class="middle_right_1-1"></div>
+                    <div class="middle_right_2">商家入驻条件?</div>
+                    <img class="middle_right_3" src="img/icon_right_pulldown.png" alt="">
+                    <div class="middle_right_4">
+                            进入诚美优选官网，点击【商家入驻】 -- 【选择店铺类型】自主入驻，具体流程为：一、选择店铺类型；二、填写并提交相
+                            关资质、店铺名(入驻成功后店铺名不能修改)、店铺详情等信息；三、等待诚美优选平台审核；四、平台审核通过后缴纳店铺
+                            保证金；五、上架商品。 
+                    </div>
+                </li>
+            </ul>
+            <!-- <div id="middle_bottom_" style="height: 100%; width:100%;">
+                <img src="img/pop_not available.png" alt="">
+                <div>抱歉,没有搜索到相关的问题 请重新搜索</div>
+            </div> -->
+            
+        </div>
+    </div>
+    <footer>
+        <span class="footer_p">
+            <img src="img/dibu.gif" alt="">
+            <p>诚美优选</p>
+        </span>
+        <span class="footer_span">
+            <span>商家入驻</span>&nbsp;|&nbsp;<span>帮助中心</span>&nbsp;|&nbsp;<span>商务合作</span>
+        </span>
+        <span class="footer_p footer_p1">
+            <img src="img/dibu.gif" alt="">
+            <p>扫码下载</p>
+        </span>
+        <div class="footer_div">豫ICP备18039469号</div>
+    </footer>
+</body>
+<script>
+    $(function(){
+        // 左侧的导航栏样式切换
+        $(".middle_bottom_ul-li").on("click",function(){
+            var next = $(this).children(".middle_div_ul");
+            var icon = $(this).children('img');
+            var qqq = $(this);
+            next.slideToggle('fade');
+            if(icon.attr('src')=="img/icon_pulldown.png"){
+                icon.attr('src','img/icon_pull up.png')
+                qqq.css('background','#333333')
+            }else{
+                icon.attr('src','img/icon_pulldown.png')
+                qqq.css('background','#14100e')
+            }
+            // 二级导航的切换
+            $('.middle_div_ul li').on("click",function(e){
+                e.stopPropagation();
+                // console.log("111")
+                var next1 = $(this);
+                $(this).css("color","#999")
+                $(".middle_div_ul li").not(next1).css("color","#fff")
+                var index = $(this).index();
+                console.log(index)
+
+                // $(".content>div").eq(index).show().siblings().hide();
+            }),
+            $('.middle_div_ul').not(next).slideUp('fast');//不是当前点击的内容全部向上收起
+            $('.middle_bottom_ul-li').children("img").not(icon).attr('src','img/icon_pulldown.png');
+            $('.middle_bottom_ul-li').not(qqq).css('background','#14100e')
+            // console.log("222")
+            return false;
+        }),
+        // $('.middle_div_ul li').on("click",function(e){
+        //     e.stopPropagation();
+        //     // console.log("111")
+        //     var next1 = $(this);
+        //     $(this).css("color","#999")
+        //     $(".middle_div_ul li").not(next1).css("color","#fff")
+        //     var index = $(this).index();
+        //     console.log(index)
+
+        //     // $(".content>div").eq(index).show().siblings().hide();
+        // }),
+        // 右侧内容的切换
+        $(".middle_right").on("click",function(){
+            var next = $(this).children(".middle_right_4");
+            var icon = $(this).children('.middle_right_3');
+            var qqq = $(this).children('.middle_right_1-1')
+            next.slideToggle('fade');
+            if(icon.attr('src')=="img/icon_right_pulldown.png"){
+            icon.attr('src','img/icon_right_pullup.png')
+                qqq.addClass("middle_right_1")
+            //   qqq.css('background','#333333')
+            }else{
+            icon.attr('src','img/icon_right_pulldown.png')
+            qqq.removeClass('middle_right_1')
+            //   qqq.css('background','#14100e')
+            }
+            $('.middle_right_4').not(next).slideUp('fast');//不是当前点击的内容全部向上收起
+            $('.middle_right').children(".middle_right_3").not(icon).attr('src','img/icon_right_pulldown.png');
+            $('.middle_right').children(".middle_right_1-1").not(qqq).removeClass('middle_right_1');
+            return false;
+        })
+        
+
+
+
+        
+        $("#backstage").click(function(){
+            window.location.href="register.html";
+    })
+    })
+</script>
+</html>

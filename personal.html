@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商家入驻-个人开店入驻</title>
+    <link rel="stylesheet" href="css/personal.css">
+    <link rel="stylesheet" href="layui-v2.5.4/layui/css/layui.css">
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="layui-v2.5.4/layui/layui.js"></script>
+</head>
+<body>
+    <header>
+        <span id="header_left">
+            <img src="img/logo.gif" alt="" id="logo">
+        </span>
+        <span id="header_right"> 
+            <span id="uesr">15517511236</span>
+            <span>|</span>
+            <span id="tuichu">退出</span>
+        </span>
+    </header>
+    <div id="from_neirong">
+        <div id="from_top">
+            <span id="from_top_left">个人开店入驻</span>
+            <span id="from_top_right">(*请务必完善相关资料)</span>
+        </div>
+        <div id="from">店铺信息</div>
+        <div id="from_1">
+            <div id="from_1_2">
+                <span class="from_name_fu">*</span>
+                <span class="from_name">店铺名称</span>
+                <input type="text" maxlength="20"  placeholder="请输入店铺名称" id="inputs1">
+                <span class="from_tishi_3 from_tishi_1" style=" cursor:pointer;" onClick="showOverlay('overlay');" >取名字时 需要注意事项？</span>
+                <span class="from_tishi from_tishi_2">入驻后店铺名称不可修改 请谨慎填写</span>
+            </div>
+            <div>
+                <span class="from_name_fu">*</span>
+                <span class="from_name">设置密码</span>
+                <input type="password"  placeholder="请输入密码" id="inputs2">
+                <span class="from_tishi from_tishi_1">该密码为商家后台登录密码 请牢记</span>
+            </div>
+            <div>
+                <span class="from_name_fu">*</span>
+                <span class="from_name">确认密码</span>
+                <input type="password"  placeholder="请重新输入密码" id="inputs3">
+            </div>
+        </div>
+        <div id="from_xinxi">开店人基本信息</div>
+        <div id="from_2">
+            <div>
+                <span class="from_name_fu">*</span>
+                <span class="from_name">真实姓名</span>
+                <input type="text" id="inputs4">
+            </div>
+            <div>
+                <span class="from_name_fu">*</span>
+                <span class="from_name">身份证号</span>
+                <input type="text" id="inputs5">
+            </div>
+            <div id="from_2_shen">
+                <div class="from_2_shen_div from_name_1_fu" >*</div>
+                <div class="from_2_shen_div from_name_1">身份证</div>
+                <div class="from_2_shen_div" id="from_2_shen_right"> 
+                    <div id="from_shangchuan">
+                        <div>
+                            <div class="layui-upload">
+                                <div class="layui-upload-list">
+                                    <img class="layui-upload-img" id="demo1" src="img/shenfen1.gif">
+                                </div>
+                                <div class="from_shangchuan_1">上传身份证反面</div>
+                                <button type="button" class="layui-btn" id="test1" >上传</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="layui-upload">
+                                <div class="layui-upload-list">
+                                    <img class="layui-upload-img" id="demo2" src="img/shenfen1.gif">
+                                </div>
+                                <div class="from_shangchuan_1">上传身份证反面</div>
+                                <button type="button" class="layui-btn" id="test2" >上传</button>     
+                            </div>
+                        </div>
+                    </div>
+                    <div id="from_shili">
+                        <div>
+                            <div class="from_shili">示例:</div>
+                            <div class="from_shili_1">
+                                <img  src="img/shenfanzheng.gif" alt="">
+                                <span>
+                                    <p>身份证正面</p>
+                                    <p>证件全部信息清晰无遮挡</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="from_shili_botton">
+                            <span class="from_shili_3">示例:</span>
+                            <span class="from_shili_2">
+                                <img src="img/shenfenzheng1.gif" alt="">
+                                <span>
+                                    <p>身份证反面</p>
+                                    <p>证件全部信息清晰无遮挡</p>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="javascript:history.back(-1)" id="tijiao_1">上一步</a>
+            <span class="tijiao_2" id="tijiao">提交申请</span>
+        </div>
+    </div>
+    <footer>
+        <span class="footer_p">
+            <img src="img/dibu.gif" alt="">
+            <p>诚美优选</p>
+        </span>
+        <span class="footer_span">
+            <span>商家入驻</span>&nbsp;|&nbsp;<span>帮助中心</span>&nbsp;|&nbsp;<span>商务合作</span>
+        </span>
+        <span class="footer_p footer_p1">
+            <img src="img/dibu.gif" alt="">
+            <p>扫码下载</p>
+        </span>
+        <div class="footer_div">豫ICP备18039469号</div>
+    </footer>
+    <div id="overlay">
+        <div id="overlay_1">
+            <div>
+                <span id="overlay_biaoti">取店铺名字时需要注意事项</span>
+                <img src="img/qvxiao.gif" alt="" style=" cursor:pointer;" onClick="hideOverlay('overlay');">
+            </div>
+            <div id="overlay_neirong">
+                1.未经相关权利人授权并提交有效证明文件，店铺名称、店铺标识、店铺详情等均不<br/>
+                得使用“特约经营”、“特约经销”、“总经销”、“总代理”、“厂家认证”、<br/>
+                “官方店铺”或其他可能是买家误认为该店铺已经取得相应品牌授权的内容。<br/>
+                2.个人店铺的店铺名称不得使用“旗舰”、“专卖”、“专营”、“官方”、“直营”<br/>
+                “官字”、“官方认证”、“官方授权”、“特许经营”、“特约经销”或其他带有<br/>
+                类似含义的内容。<br/>
+                3.店铺名称不得带有电话号码、电子邮箱、网址、二维码、即时通讯工具或其他联系<br/>
+                信息（如QQ号码、微信号等）。<br/>
+                4.店铺名称不得包含具有下列情形的内容：<br/>
+                （1）有损国家、社会公共利益，或有损民族尊严的；<br/>
+                （2）侵犯他人合法权利的；<br/>
+                （3）夸大宣传、可能误导公众的；<br/>
+                （4）外国国家或地区的名称；<br/>
+                （5）国际组织的名称；<br/>
+                （6）政治敏感信息，包括但不限于国家领导人姓名、政党名称、党政军机关名称；<br/>
+                （7）含有封建文化糟粕、有消极政治影响，或违背少数民族习俗、带有歧视性的；<br/>
+                （8）与经营主体无关，含有除拼多多外的其他电子商务平台信息；<br/>
+                （9）其他违反法律法规或社会善良风俗的。<br/>                   
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    function showOverlay(divId){
+        document.getElementById(divId).style.display = 'block';
+    }
+    function hideOverlay(divId){
+        document.getElementById(divId).style.display = 'none';
+    }
+    </script>
+    <script>
+        $(function(){
+            $("#inputs1").focus(function(){
+                $(".from_tishi_3").css("display","none")
+                $(".from_tishi_2").css("display","block")
+            })
+            $("#inputs1").blur(function(){
+                $(".from_tishi_3").css("display","block")
+                $(".from_tishi_2").css("display","none")
+            }) 
+            function estimate(){
+                var src = $('#demo1').attr('src');
+                var src1 = $('#demo2').attr('src');
+                // console.log(src)
+                if(($.trim($('#inputs1').val()) !== "") 
+                    && ($.trim($('#inputs2').val()) !== "")
+                    && ($.trim($('#inputs3').val()) !== "") 
+                    && ($.trim($('#inputs4').val()) !== "") 
+                    && ($.trim($('#inputs5').val()) !== "")
+                    // && (src !== "img/shenfen1.gif")
+                    // && (src1 !== "img/shenfen1.gif")
+                ){
+                    $("#tijiao").addClass("tijiao_3"); 
+                } else {
+                    $("#tijiao").removeClass("tijiao_3");
+                }
+            }
+            $('input').on('input propertychange', function() {
+                estimate()
+            });
+            $("#inputs3").on("blur",function(){
+                if($("#inputs3").val() === $("#inputs2").val()){
+
+                }else{
+                    alert ("请确定是否输入一样")
+                }
+            })
+            //文本框获取焦点
+            // $("#inputs5").blur(function(){
+            //     var cardval=$(this).val();
+            //     var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; 
+            //     if(reg.test(cardval) === false) { 
+            //     alert("身份证输入不合法");
+            //     // $(this).next('#inputs5').show();
+            //     return false; 
+            //     } 
+            // });
+
+            $(document).on('click','.tijiao_3',function (){
+                // var aa = $("#inputs1").val()
+                // console.log(aa)
+                
+                var token =  localStorage.getItem('enter')
+                $.ajax({
+                    url:"https://api.chengmeiyoupin.com/rear/index/enter",
+                    type:"get",
+                    headers:{
+                        "enter":token
+                    },
+                    data:{
+                        category:1,
+                        store_name:$("#inputs1").val(),
+                        password:$("#inputs2").val(),
+                        re_password:$("#inputs3").val(),
+                        true_name:$("#inputs4").val(),
+                        id_card:$("#inputs5").val(),
+                        id_card_positive:"aa",
+                        id_card_negative:"aa",
+
+                    },
+                    success:function(data){
+                        console.log(data)
+                        if(data.code==200){
+                            alert("已提交，待审核")
+                        }else{
+                            alert(data.msg)
+                        }
+                    }
+                })
+            });
+        })
+        
+
+
+layui.use('upload', function(){
+  var $ = layui.jquery
+  ,upload = layui.upload;
+  
+  //普通图片上传
+  var uploadInst = upload.render({
+    elem: '#test1'
+    ,url: '/upload/'
+    ,auto: false
+    ,bindAction:'#tijiao'
+    ,choose: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+        $('#demo1').attr('src', result); //图片链接（base64）
+      });
+    }
+    ,done: function(res){
+      //如果上传失败
+      if(res.code > 0){
+        return layer.msg('上传失败');
+      }
+      //上传成功
+    }
+    ,error: function(){
+      //演示失败状态，并实现重传
+      var demoText = $('#demoText');
+      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+      demoText.find('.demo-reload').on('click', function(){
+        uploadInst.upload();
+      });
+    }
+  });
+
+  var uploadInst = upload.render({
+    elem: '#test2'
+    ,url: '/upload/'
+    ,auto: false
+    ,bindAction:'#tijiao'
+    ,choose: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+        $('#demo2').attr('src', result); //图片链接（base64）
+      });
+    }
+    ,done: function(res){
+      //如果上传失败
+      if(res.code > 0){
+        return layer.msg('上传失败');
+      }
+      //上传成功
+    }
+    ,error: function(){
+      //演示失败状态，并实现重传
+      var demoText = $('#demoText');
+      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+      demoText.find('.demo-reload').on('click', function(){
+        uploadInst.upload();
+      });
+    }
+  });
+})
+    </script>
+</html>

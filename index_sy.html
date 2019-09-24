@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>诚美优选</title>
+    <link rel="stylesheet" href="css/index_sy.css">
+    <script src="js/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <header>
+        <img src="img/logo.gif" alt="">
+        <nav>
+            <span>首页</span>
+            <span><a href="index.html">商家入驻</a></span>
+            <span><a href="help.html">帮助中心</a></span>
+            <span>商务合作</span>
+        </nav>
+        <span id="backstage">商家后台管理</span>
+    </header>
+    <div id="middle">
+        <div id="middle_top">
+            <div id="middle_top_wn">
+                <div>
+                    <div id="middle_top_logo">
+                        <img src="img/logo_y.png" alt="">
+                        <div>诚美优选</div>
+                    </div>
+                    <div id="middle_top_logo1">
+                        诚美优选&nbsp;&nbsp;&nbsp;选你所爱&nbsp;！
+                    </div>
+                    <div id="middle_top_logo2">
+                        <div id="rect">
+                            <span id="rect_top_left"></span>
+                            <span id="rect_top_right"></span>
+                            <span id="rect_bottom_left"></span>
+                            <span id="rect_bottom_right"></span>
+                            <div></div>
+                        </div>
+                        <div>
+                            <div class="middle_top_download"><img src="img/苹果.png" alt=""> <div>ios&nbsp;&nbsp;下载</div></div>
+                            <div class="middle_top_download"><img src="img/安卓.png" alt=""> <div>安卓下载</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img id="middle_top_imgq" class="middle_top_img1" src="img/bananr_浮动1.gif" alt="">
+            <img class="middle_top_img2" src="img/手机浮动2.gif" alt="">
+            <img class="middle_top_img3" src="img/bananr.gif" alt="">
+        </div>
+        <div id="middle_bottom">
+            <div class="middle_bottom_div">
+                <div class="middle_bottom_img">
+                </div>
+                <div class="middle_bottom_dl">
+                    <div></div>
+                    <div>海量商品&nbsp;品类多样</div>
+                    <div>
+                        精选优质品&nbsp;满足用户多样需求
+                        <br/>快捷搜索&nbsp;&nbsp;&nbsp;定位精准商品和店铺
+                        <br/>分享微信、qq好友，享受商品优惠砍价                      
+                    </div>
+                </div>
+            </div>
+            <div class="middle_bottom_div">
+                <div class="middle_bottom_dl" style="margin-left: 0;">
+                    <div></div>
+                    <div>即时通讯聊天&nbsp;&nbsp;咨询问题&nbsp;<span class="special">不等待</span></div>
+                    <div>
+                        方便快捷的即时沟通，客服小姐姐24小时全天在线                
+                    </div>
+                </div>
+                <div class="middle_bottom_img" style="width:277px; margin-left: 160px;">
+
+                </div>
+            </div>
+            <div class="middle_bottom_div">
+                <div class="middle_bottom_img">
+
+                </div>
+                <div class="middle_bottom_dl">
+                    <div></div>
+                    <div>订单管理&nbsp;&nbsp;服务管理</div>
+                    <div>
+                        订单物流跟踪&nbsp;即时查询
+                        <br/>7天无理由退换货&nbsp;&nbsp;&nbsp;15天可申请售后服务
+                        <br/><span class="special">商家入驻</span>&nbsp;&nbsp;&nbsp;共创双赢
+                        <br/>热门<span class="special_1">主题换肤</span>&nbsp;&nbsp;&nbsp;打造个性APP私人界面                 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dibu">
+        <footer>
+            <span class="footer_p">
+                <img src="img/logo_y.png" alt="">
+                <p>诚美优选</p>
+            </span>
+            <span class="footer_span">
+                <span>商家入驻</span>&nbsp;|&nbsp;<span>帮助中心</span>&nbsp;|&nbsp;<span>商务合作</span>
+            </span>
+            <span class="footer_p footer_p1">
+                <img src="img/logo_y.png" alt="">
+                <p>扫码下载</p>
+            </span>
+            <div class="footer_div">豫ICP备18039469号</div>
+        </footer>
+    </div>
+    
+
+
+</body>
+<script>
+    $(function(){
+        setInterval(function(){    
+            $('#middle_top_imgq').remove();
+        },5000);
+        $("#backstage").click(function(){
+            window.location.href="register.html";
+        })
+    })
+    
+    // var myDate = new Date();
+
+    // srce = "img/bananr.gif?m=" + myDate.gett.getTime();//获取从19700101到现在的毫秒数
+    // $(".middle_top_img3").attr("src", "srce");
+</script>
+</html>
