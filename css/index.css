@@ -61,7 +61,7 @@ header>span{
 #ruzhu{
     height: 856px;
     width: 100%;
-    background-size: 100% auto; 
+    /* background-size: 100% auto;  */
     background-repeat: no-repeat; 
     background-image: url(../img/bg_golden.png);
     /* position: relative;
