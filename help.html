@@ -30,15 +30,15 @@
             </div>
             <div id="middle_input">
                 <img src="img/搜索.png" alt="">
-                <input type="text" placeholder="请输入您想要的搜索内容">
+                <input type="text" placeholder="请输入您想要的搜索内容" id="text">
             </div>
             <div id="button">搜索</div>
         </div>
     </div>
     <div id="middle_bottom">
         <div id="middle_bottom_left">
-            <ul class="middle_bottom_ul">
-                <li class="middle_bottom_ul-li">
+            <ul class="middle_bottom_ul" id="middle_bottom_ul">
+                <!-- <li class="middle_bottom_ul-li">
                         <div class="middle_li">商家入驻相关</div>
                         <img class="middle_img" src="img/icon_pulldown.png" alt="">
                         <ul class="middle_div_ul">
@@ -65,12 +65,12 @@
                             <li>提交资质问题</li>
                             <li>店铺保证金及体现问题</li>
                         </ul>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div id="middle_bottom_right">
             <ul id="middle_bottom_right_ul">
-                <li class="middle_right">
+                <!-- <li class="middle_right">
                     <div class="middle_right_1-1"></div>
                     <div class="middle_right_2">商家入驻条件?</div>
                     <img class="middle_right_3" src="img/icon_right_pulldown.png" alt="">
@@ -89,7 +89,7 @@
                             关资质、店铺名(入驻成功后店铺名不能修改)、店铺详情等信息；三、等待诚美优选平台审核；四、平台审核通过后缴纳店铺
                             保证金；五、上架商品。 
                     </div>
-                </li>
+                </li> -->
             </ul>
             <!-- <div id="middle_bottom_" style="height: 100%; width:100%;">
                 <img src="img/pop_not available.png" alt="">
@@ -115,73 +115,140 @@
 </body>
 <script>
     $(function(){
-        // 左侧的导航栏样式切换
-        $(".middle_bottom_ul-li").on("click",function(){
-            var next = $(this).children(".middle_div_ul");
-            var icon = $(this).children('img');
-            var qqq = $(this);
-            next.slideToggle('fade');
-            if(icon.attr('src')=="img/icon_pulldown.png"){
-                icon.attr('src','img/icon_pull up.png')
-                qqq.css('background','#333333')
-            }else{
-                icon.attr('src','img/icon_pulldown.png')
-                qqq.css('background','#14100e')
-            }
-            // 二级导航的切换
-            $('.middle_div_ul li').on("click",function(e){
-                e.stopPropagation();
-                // console.log("111")
-                var next1 = $(this);
-                $(this).css("color","#999")
-                $(".middle_div_ul li").not(next1).css("color","#fff")
-                var index = $(this).index();
-                console.log(index)
+        // 左侧的导航栏样式切换    
+        $.ajax({
+            url: 'test.json',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                // console.log(data);
+                // console.log(data[0].name)
+                // console.log(data.length)
+                // 
+                var html = "";
+                for(var i=0; i<data.length; i++){
+                    console.log(i)
+                    html += 
+                    `<li class="middle_bottom_ul-li">
+                        <div class="middle_li">${data[i].name}</div>
+                        <img class="middle_img" src="img/icon_pulldown.png" alt="">
+                        <ul class="middle_div_ul">
+                            <li>${data[i].name_x.user}</li>
+                            <li>${data[i].name_x.ures}</li>
+                            <li>${data[i].name_x.urers}</li>
+                        </ul>
+                    
+                </li>`
+                }
+                // 数据插入
+                $("#middle_bottom_ul").html(html);
 
-                // $(".content>div").eq(index).show().siblings().hide();
-            }),
-            $('.middle_div_ul').not(next).slideUp('fast');//不是当前点击的内容全部向上收起
-            $('.middle_bottom_ul-li').children("img").not(icon).attr('src','img/icon_pulldown.png');
-            $('.middle_bottom_ul-li').not(qqq).css('background','#14100e')
-            // console.log("222")
-            return false;
-        }),
-        // $('.middle_div_ul li').on("click",function(e){
-        //     e.stopPropagation();
-        //     // console.log("111")
-        //     var next1 = $(this);
-        //     $(this).css("color","#999")
-        //     $(".middle_div_ul li").not(next1).css("color","#fff")
-        //     var index = $(this).index();
-        //     console.log(index)
+                $(".middle_bottom_ul-li").on("click",function(){
+                    var next = $(this).children(".middle_div_ul");
+                    var icon = $(this).children('img');
+                    var qqq = $(this);
+                    next.slideToggle('fade');
+                    if(icon.attr('src')=="img/icon_pulldown.png"){
+                        icon.attr('src','img/icon_pull up.png')
+                        qqq.css('background','#333333')
+                    }else{
+                        icon.attr('src','img/icon_pulldown.png')
+                        qqq.css('background','#14100e')
+                    }
+                    // 二级导航的切换
+                    $('.middle_div_ul li').on("click",function(e){
+                        e.stopPropagation();
+                        // console.log("111")
+                        var next1 = $(this);
+                        $(this).css("color","#999")
+                        $(".middle_div_ul li").not(next1).css("color","#fff")
+                        var index = $(this).index();
+                        console.log(index)
+                        // 右侧数据请求接口
+                        $.ajax({
+                            url:'test1.json',
+                            type:'GET',
+                            dataType: 'json',
+                            success:function(data){
+                                console.log(data)
+                                var html1 = ""
+                                for(var i=0; i<data.length; i++){
+                                    console.log(i)
+                                    html1 += 
+                                    `<li class="middle_right">
+                                        <div class="middle_right_1-1"></div>
+                                        <div class="middle_right_2">${data[i].sj}</div>
+                                        <img class="middle_right_3" src="img/icon_right_pulldown.png" alt="">
+                                        <div class="middle_right_4">
+                                            ${data[i].nr}
+                                        </div>
+                                    </li>`
+                                }
+                                // 数据插入到右边
+                                $("#middle_bottom_right_ul").html(html1)
+                                // 点击变换
+                                $(".middle_right").on("click",function(){
+                                    var next = $(this).children(".middle_right_4");
+                                    var icon = $(this).children('.middle_right_3');
+                                    var qqq = $(this).children('.middle_right_1-1')
+                                    next.slideToggle('fade');
+                                    if(icon.attr('src')=="img/icon_right_pulldown.png"){
+                                    icon.attr('src','img/icon_right_pullup.png')
+                                        qqq.addClass("middle_right_1")
+                                    //   qqq.css('background','#333333')
+                                    }else{
+                                    icon.attr('src','img/icon_right_pulldown.png')
+                                    qqq.removeClass('middle_right_1')
+                                    //   qqq.css('background','#14100e')
+                                    }
+                                    $('.middle_right_4').not(next).slideUp('fast');//不是当前点击的内容全部向上收起
+                                    $('.middle_right').children(".middle_right_3").not(icon).attr('src','img/icon_right_pulldown.png');
+                                    $('.middle_right').children(".middle_right_1-1").not(qqq).removeClass('middle_right_1');
+                                    return false;
+                                })
+                            }
+                        })
+                        // $(".content>div").eq(index).show().siblings().hide();
+                    }),
 
-        //     // $(".content>div").eq(index).show().siblings().hide();
-        // }),
-        // 右侧内容的切换
-        $(".middle_right").on("click",function(){
-            var next = $(this).children(".middle_right_4");
-            var icon = $(this).children('.middle_right_3');
-            var qqq = $(this).children('.middle_right_1-1')
-            next.slideToggle('fade');
-            if(icon.attr('src')=="img/icon_right_pulldown.png"){
-            icon.attr('src','img/icon_right_pullup.png')
-                qqq.addClass("middle_right_1")
-            //   qqq.css('background','#333333')
-            }else{
-            icon.attr('src','img/icon_right_pulldown.png')
-            qqq.removeClass('middle_right_1')
-            //   qqq.css('background','#14100e')
+                    $('.middle_div_ul').not(next).slideUp('fast');//不是当前点击的内容全部向上收起
+                    $('.middle_bottom_ul-li').children("img").not(icon).attr('src','img/icon_pulldown.png');
+                    $('.middle_bottom_ul-li').not(qqq).css('background','#14100e')
+                    // console.log("222")
+                    return false;
+                })
             }
-            $('.middle_right_4').not(next).slideUp('fast');//不是当前点击的内容全部向上收起
-            $('.middle_right').children(".middle_right_3").not(icon).attr('src','img/icon_right_pulldown.png');
-            $('.middle_right').children(".middle_right_1-1").not(qqq).removeClass('middle_right_1');
-            return false;
+        });
+        // 搜索
+        $("#button").click(function(){
+            var item = $("#text").val()
+            $.ajax({
+                url:"test2.json",
+                type:"GET",
+                dataType:"json",
+                // data:{item},
+                success:function(data){
+                    console.log(data)
+                    var html1 = "";
+                    // 将搜索出来的数据渲染到右侧ul中
+                    for(var i=0; i<data.length; i++){
+                        console.log(i)
+                        html1 += 
+                        `<li class="middle_right">
+                            <div class="middle_right_1-1"></div>
+                            <div class="middle_right_2">${data[i].sj}</div>
+                            <img class="middle_right_3" src="img/icon_right_pulldown.png" alt="">
+                            <div class="middle_right_4">
+                                ${data[i].nr}
+                            </div>
+                        </li>`
+                    }
+                    // 插入搜索出来的数据替换之前的数据
+                    $("#middle_bottom_right_ul").html(html1)
+                }
+            })
         })
-        
-
-
-
-        
+        // 跳转到后台管理登录页面
         $("#backstage").click(function(){
             window.location.href="register.html";
     })
